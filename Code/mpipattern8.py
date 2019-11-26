@@ -42,8 +42,8 @@ comm.Scatter(listall,list1,root=0)
 # compute cumulitive sum for our section
 x=0
 for index, item in enumerate(list1):
-     x += item
-     list1[index] = x
+    x += item
+    list1[index] = x
 
 # now send cum sum to other ranks.  This is a bit fiddly
 # we first send from 1mod2 to 0mod2 then from
