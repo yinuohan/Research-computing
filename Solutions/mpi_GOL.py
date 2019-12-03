@@ -16,7 +16,7 @@ comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
 size = comm.Get_size()
 
-# 12 is so there is space for the cells from other ranks
+# 12 is so there is space for the cells from other ranks after communication
 cells = np.zeros((10,12))
 if rank==0:
     cells[3,6:8] = 1
@@ -38,4 +38,4 @@ fig = plt.figure()
 ax = plt.axes()
 ax.matshow(cells[:,1:11])
 filename = 'PlotRank'+str(rank)+'.png'
-savefig(filename)
+plt.savefig(filename)
